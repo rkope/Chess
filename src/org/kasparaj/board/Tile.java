@@ -9,15 +9,19 @@ public class Tile {
 	
 	private final Vector position;
 	
-	private Set<Piece> backref;
+	private Set<Piece> backrefs;
 	
 	public Tile(int x, int y) {
 		this.position = new Vector(x, y);
-		backref = new HashSet<>();
+		backrefs = new HashSet<>();
 	}
 	
 	public Vector getPos() {
 		return position;
+	}
+	
+	public void registerBackref(Piece p) {
+		backrefs.add(p);
 	}
 	
 }
